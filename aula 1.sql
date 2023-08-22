@@ -41,4 +41,32 @@ add constraint fk_pedido foreign key (idPedido) references pedido(id);
 
 alter table pedido_produto
 add constraint fk_pedido foreign key (idProduto) references pedido(id);
+
+create table usuario(
+	id int not null,
+    nome varchar(45) not null
+
+);
+
+#sessão abaixo foi um struggling de nao ter adicionado auto_increment
+# na primary key de usuario, sendo necessario dropa a foreign key e alterar 
+
+alter table pedido
+add usuario_id int not null;
+
+alter table usuario
+add constraint pk_id primary key (id);
+
+
+alter table pedido
+add constraint fk_usuario foreign key (usuario_id) references usuario(id);
+
+alter table usuario
+ modify id int not null auto_increment;
+ 
+ alter table pedido
+ drop foreign key fk_usuario;
+ 
+ 
+ 
 #drop table cliente
