@@ -19,4 +19,31 @@ desc cliente;
 desc pedido;
 
 select c.nome, pp.numero from pedido pp
-join cliente c on (c.codigo = pp.codigoCliente)
+join cliente c on (c.codigo = pp.codigoCliente);
+
+
+#Mostre a quantidade de cidades de São Paulo que não possuem clientes
+
+select cidade.nome from cidade where codigoEstado ='26';
+
+select cidade.nome from cidade where codigoEstado ='26';
+
+select * from cliente where nome ='Beth';
+
+desc cidade;
+
+select cliente.nome, cidade.nome from cliente, cidade where cidade.codigoEstado ='26';
+
+#todos os clientes de sp
+select count(c.nome), cd.nome from cidade cd
+join cliente c on (c.codigoCidade = cd.codigo);
+
+select codigoCidade from cliente where nome = 'Beth';
+
+select nome from cidade where codigo = 5341;
+
+select c.nome, cd.nome from cidade cd
+join cliente c on (c.codigoCidade = cd.codigo);
+
+#todas as cidades de São paulo
+select count(*) from cidade where codigoEstado = 26;
